@@ -13,3 +13,6 @@ types: begin of gty_vendor,
          spras type spras,
          waers type waers,
        end of gty_vendor.
+
+data: gs_bdcdata type bdcdata,
+      gs_msg     type bdcmsgcoll.
