@@ -16,3 +16,7 @@ types: begin of gty_vendor,
 
 data: gs_bdcdata type bdcdata,
       gs_msg     type bdcmsgcoll.
+
+data: gt_bdcdata type table of bdcdata,
+      gt_bdcmsg  type table of bdcmsgcoll,
+      gt_vendor  type table of gty_vendor.
