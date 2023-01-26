@@ -20,3 +20,13 @@ data: gs_bdcdata type bdcdata,
 data: gt_bdcdata type table of bdcdata,
       gt_bdcmsg  type table of bdcmsgcoll,
       gt_vendor  type table of gty_vendor.
+      
+data: lv_mode    type sy-ftype,
+      lv_update  type sy-ftype,
+      gs_vendor  type gty_vendor.
+      
+      
+gs_vendor = value #( bukrs =  '0001' ekorg = '0001' lifnr = 'VENDOR9' ktokk = '0001'
+                     name1 = 'BERGBAU' sortl = 'BBU' stras = 'Münchener Str.16'
+                     ort01 = 'München' land1 = 'DE' spras = 'DE' waers = 'EUR'
+                    ).
