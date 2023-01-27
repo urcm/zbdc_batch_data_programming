@@ -46,6 +46,18 @@ loop at gt_vendor into gs_vendor.
   gs_bdcdata-fval = 'RF02K-LIFNR'.
   append gs_bdcdata to gt_bdcdata.
   clear gs_bdcdata.
-  
-  
+
+  *   Screen 0100 - Field 2 - BDC OKCODE
+  gs_bdcdata-fnam = 'BDC_OKCODE'.
+  gs_bdcdata-fval = '/00'.
+  append gs_bdcdata to gt_bdcdata.
+  clear gs_bdcdata.
+
+  *   Screen 0100 - Field 3 - Company Code
+  gs_bdcdata-fnam = 'RF02K-BUKRS'.
+  gs_bdcdata-fval = gs_vendor-bukrs.
+  append gs_bdcdata to gt_bdcdata.
+  clear gs_bdcdata.
+
+
 endloop.
