@@ -33,3 +33,19 @@ gs_vendor = value #( bukrs =  '0001' ekorg = '0001' lifnr = 'VENDOR9' ktokk = '0
 
 
 append gs_vendor to gt_vendor.
+
+
+loop at gt_vendor into gs_vendor.
+
+*   Screen 0100 - Field 1 - BDC Cursor
+  gs_bdcdata-program = 'SAPMF02K'.
+  gs_bdcdata-dynpro = '0100'.
+  gs_bdcdata-dynbegin = 'X'.
+
+  gs_bdcdata-fnam = 'BDC_CURSOR'.
+  gs_bdcdata-fval = 'RF02K-LIFNR'.
+  append gs_bdcdata to gt_bdcdata.
+  clear gs_bdcdata.
+  
+  
+endloop.
