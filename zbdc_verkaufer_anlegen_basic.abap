@@ -58,6 +58,18 @@ loop at gt_vendor into gs_vendor.
   gs_bdcdata-fval = gs_vendor-bukrs.
   append gs_bdcdata to gt_bdcdata.
   clear gs_bdcdata.
+  
+  *   Screen 0100 - Field 4 - Purchasing Organization
+  gs_bdcdata-fnam = 'RF02K-EKORG'.
+  gs_bdcdata-fval = gs_vendor-ekorg.
+  append gs_bdcdata to gt_bdcdata.
+  clear gs_bdcdata.
+
+*   Screen 0100 - Field 5 - Vendor
+  gs_bdcdata-fnam = 'RF02K-LIFNR'.
+  gs_bdcdata-fval = gs_vendor-lifnr.
+  append gs_bdcdata to gt_bdcdata.
+  clear gs_bdcdata.
 
 
 endloop.
