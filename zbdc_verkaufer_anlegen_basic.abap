@@ -79,5 +79,14 @@ loop at gt_vendor into gs_vendor.
 
 **********************************************************************
 
+*   Screen 0110 - Field 1 - BDC Cursor
+  gs_bdcdata-program = 'SAPMF02K'.
+  gs_bdcdata-dynpro = '0310'.
+  gs_bdcdata-dynbegin = 'X'.
+
+  gs_bdcdata-fnam = 'BDC_CURSOR'.
+  gs_bdcdata-fval = 'LFM1-WAERS'.
+  append gs_bdcdata to gt_bdcdata.
+  clear gs_bdcdata.
 
 endloop.
