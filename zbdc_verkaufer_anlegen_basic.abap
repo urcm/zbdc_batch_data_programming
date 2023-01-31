@@ -88,5 +88,11 @@ loop at gt_vendor into gs_vendor.
   gs_bdcdata-fval = 'LFM1-WAERS'.
   append gs_bdcdata to gt_bdcdata.
   clear gs_bdcdata.
+  
+  *   Screen 0110 - Field 2 - BDC OKCODE
+  gs_bdcdata-fnam = 'BDC_OKCODE'.
+  gs_bdcdata-fval = '=UPDA'.
+  append gs_bdcdata to gt_bdcdata.
+  clear gs_bdcdata.
 
 endloop.
