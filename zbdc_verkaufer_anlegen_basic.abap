@@ -26,6 +26,9 @@ data: lv_mode    type sy-ftype,
       gs_vendor  type gty_vendor.
       
       
+lv_mode = 'A'.
+lv_update = 'S'.      
+      
 gs_vendor = value #( bukrs =  '0001' ekorg = '0001' lifnr = 'VENDOR9' ktokk = '0001'
                      name1 = 'BERGBAU' sortl = 'BBU' stras = 'Münchener Str.16'
                      ort01 = 'München' land1 = 'DE' spras = 'DE' waers = 'EUR'
