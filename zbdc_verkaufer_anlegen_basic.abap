@@ -103,5 +103,20 @@ loop at gt_vendor into gs_vendor.
   gs_bdcdata-fval = gs_vendor-waers.
   append gs_bdcdata to gt_bdcdata.
   clear gs_bdcdata.
+  
+  call function 'ABAP4_CALL_TRANSACTION' starting new task 'ZBDC_ERSTELLEN_VENDOR'
+    exporting
+      tcode                   = 'XK01'
+      skip_screen             = abap_false
+      mode_val                = lv_mode
+      update_val              = lv_update
+    tables
+      using_tab               = gt_bdcdata
+      spagpa_tab              = gt_params
+      mess_tab                = gt_bdcmsg
+    exceptions
+      call_transaction_denied = 1
+      tcode_invalid           = 2
+      others                  = 3.  
 
 endloop.
