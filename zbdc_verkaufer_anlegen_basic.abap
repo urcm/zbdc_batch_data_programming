@@ -104,6 +104,10 @@ loop at gt_vendor into gs_vendor.
   append gs_bdcdata to gt_bdcdata.
   clear gs_bdcdata.
   
+*  call transaction 'XK01' using gt_bdcdata
+*             mode 'A' update 'S' messages into gt_bdcmsg.
+
+  
   call function 'ABAP4_CALL_TRANSACTION' starting new task 'ZBDC_ERSTELLEN_VENDOR'
     exporting
       tcode                   = 'XK01'
