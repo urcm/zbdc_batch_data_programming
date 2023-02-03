@@ -122,5 +122,14 @@ loop at gt_vendor into gs_vendor.
       call_transaction_denied = 1
       tcode_invalid           = 2
       others                  = 3.  
+      
+  data(lv_result) = switch char20( sy-subrc
+          when 0 then 'Saved'
+          when 1 then 'Call Transaction Denied'
+          when 2 then 'T-Code Invalid'
+          else 'Error Occured '
+  ).
+
+  write :/ lv_result.      
 
 endloop.
