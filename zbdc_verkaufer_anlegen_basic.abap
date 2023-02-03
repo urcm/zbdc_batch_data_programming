@@ -131,5 +131,12 @@ loop at gt_vendor into gs_vendor.
   ).
 
   write :/ lv_result.      
+  
+    loop at gt_bdcmsg assigning field-symbol(<fs_msg>).
+    write :/ <fs_msg>-dyname.
+  endloop.
+
+  clear gt_bdcdata.
+
 
 endloop.
