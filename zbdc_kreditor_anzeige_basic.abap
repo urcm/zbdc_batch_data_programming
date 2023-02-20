@@ -42,3 +42,11 @@ call function 'ABAP4_CALL_TRANSACTION'
     call_transaction_denied = 1
     tcode_invalid           = 2
     others                  = 3.
+
+data(lv_mes) = switch char20( sy-subrc
+                  when 0 then 'Kein Problem'
+                  when 1 then 'Call-Transaktion abgelehnt'
+                  when 2 then 'T-Code ungültig'
+                  when 3 then 'Die anderen Fehler' ).
+
+write :/ lv_mes.
