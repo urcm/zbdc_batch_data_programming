@@ -28,3 +28,17 @@ gt_using_tab = value #( ( program = 'SAPMF02K' dynpro = '0101' dynbegin = 'X' fn
                         ( program = 'SAPMF02K' dynpro = '0110' dynbegin = 'X' fnam = '' fval = '' )
                         ( program = '' dynpro = '' dynbegin = '' fnam = 'BDC_CURSOR' fval = 'RF02K-LIFNR' )
                         ( program = '' dynpro = '' dynbegin = '' fnam = 'BDC_OKCODE' fval = '/00' ) ).
+
+call function 'ABAP4_CALL_TRANSACTION'
+  exporting
+    tcode                   = 'XK03'
+    skip_screen             = abap_false
+    mode_val                = 'A'
+    update_val              = 'A'
+  tables
+    using_tab               = gt_using_tab
+    mess_tab                = gt_mess_tab
+  exceptions
+    call_transaction_denied = 1
+    tcode_invalid           = 2
+    others                  = 3.
