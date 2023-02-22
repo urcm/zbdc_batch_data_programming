@@ -11,4 +11,6 @@ types: begin of gty_mara,
        end of gty_mara.
 
 data: gt_mara type standard table of gty_mara,
-      gs_mara like line of gt_mara.
+      gs_mara like line of gt_mara.      
+      
+data: gv_filename type string.
