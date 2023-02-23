@@ -14,3 +14,9 @@ data: gt_mara type standard table of gty_mara,
       gs_mara like line of gt_mara.      
       
 data: gv_filename type string.
+
+data:   bdcdata like bdcdata    occurs 0 with header line,
+        messtab like bdcmsgcoll occurs 0 with header line.
+
+parameters: p_file like rlgrap-filename obligatory.
+
