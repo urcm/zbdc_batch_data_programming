@@ -20,3 +20,11 @@ data:   bdcdata like bdcdata    occurs 0 with header line,
 
 parameters: p_file like rlgrap-filename obligatory.
 
+at selection-screen on value-request for p_file.
+
+  CALL FUNCTION 'KD_GET_FILENAME_ON_F4'
+    EXPORTING
+      static    = 'X'
+    CHANGING
+      file_name = p_file.
+
