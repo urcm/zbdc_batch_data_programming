@@ -31,3 +31,14 @@ at selection-screen on value-request for p_file.
 start-of-selection.
 
   gv_filename = p_file.
+  
+  call function 'GUI_UPLOAD'
+    exporting
+      filename            = gv_filename
+      filetype            = 'ASC'
+      has_field_separator = 'X'
+    tables
+      data_tab            = gt_mara.
+
+  cl_demo_output=>display( gt_mara ).
+  
