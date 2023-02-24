@@ -28,3 +28,6 @@ at selection-screen on value-request for p_file.
     CHANGING
       file_name = p_file.
 
+start-of-selection.
+
+  gv_filename = p_file.
