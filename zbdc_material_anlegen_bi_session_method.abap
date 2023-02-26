@@ -42,3 +42,10 @@ start-of-selection.
 
   cl_demo_output=>display( gt_mara ).
   
+call function 'BDC_OPEN_GROUP'
+    exporting
+      client = sy-mandt
+      group  = 'ZMM0102030'
+      keep   = 'X'
+      user   = sy-uname
+      prog   = sy-cprog.
