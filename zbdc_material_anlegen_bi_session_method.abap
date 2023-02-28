@@ -49,3 +49,19 @@ call function 'BDC_OPEN_GROUP'
       keep   = 'X'
       user   = sy-uname
       prog   = sy-cprog.
+      
+loop at gt_mara into gs_mara.
+
+    refresh: messtab, bdcdata.
+
+    perform bdc_dynpro      using 'SAPLMGMM' '0060'.
+    perform bdc_field       using 'BDC_CURSOR'
+                                  'RMMG1-MATNR'.
+    perform bdc_field       using 'BDC_OKCODE'
+                                  '=ENTR'.
+    perform bdc_field       using 'RMMG1-MATNR'
+                                  gs_mara-matnr.    "'ZMADM'.
+                                  
+endloop.
+                                  
+                                  
