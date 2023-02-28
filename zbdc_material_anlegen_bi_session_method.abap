@@ -62,6 +62,16 @@ loop at gt_mara into gs_mara.
     perform bdc_field       using 'RMMG1-MATNR'
                                   gs_mara-matnr.    "'ZMADM'.
                                   
+                                  
+    perform bdc_field       using 'RMMG1-MBRSH'
+                                  'M'.
+    perform bdc_field       using 'RMMG1-MTART'
+                                  'FHMI'.
+    perform bdc_dynpro      using 'SAPLMGMM' '0070'.
+    perform bdc_field       using 'BDC_CURSOR'
+                                  'MSICHTAUSW-DYTXT(04)'.
+    perform bdc_field       using 'BDC_OKCODE'
+                                  '=ENTR'.                              
 endloop.
                                   
                                   
