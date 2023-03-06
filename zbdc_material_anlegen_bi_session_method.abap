@@ -81,7 +81,21 @@ loop at gt_mara into gs_mara.
     perform bdc_field       using 'BDC_CURSOR'
                                   'MSICHTAUSW-DYTXT(04)'.
     perform bdc_field       using 'BDC_OKCODE'
-                                  '=ENTR'.                                  
+                                  '=ENTR'.           
+                                  
+    perform bdc_field       using 'MSICHTAUSW-KZSEL(01)'
+                                  'X'.
+    perform bdc_field       using 'MSICHTAUSW-KZSEL(02)'
+                                  'X'.
+    perform bdc_field       using 'MSICHTAUSW-KZSEL(04)'
+                                  'X'.
+    perform bdc_dynpro      using 'SAPLMGMM' '0080'.
+    perform bdc_field       using 'BDC_CURSOR'
+                                  'RMMG1-WERKS'.
+    perform bdc_field       using 'BDC_OKCODE'
+                                  '=ENTR'.
+                                  
+                                  
 endloop.
                                   
                                   
