@@ -95,6 +95,13 @@ loop at gt_mara into gs_mara.
     perform bdc_field       using 'BDC_OKCODE'
                                   '=ENTR'.
                                   
+    perform bdc_field       using 'RMMG1-WERKS'
+                                  'ZM03'.
+    perform bdc_dynpro      using 'SAPLMGMM' '4004'.
+    perform bdc_field       using 'BDC_OKCODE'
+                                  '/00'.
+    perform bdc_field       using 'MAKT-MAKTX'
+                                  gs_mara-maktx.  "'Staubsauger Roboter'.                                  
                                   
 endloop.
                                   
