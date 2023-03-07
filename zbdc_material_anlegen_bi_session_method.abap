@@ -114,6 +114,16 @@ loop at gt_mara into gs_mara.
     perform bdc_field       using 'MARA-GEWEI'
                                   gs_mara-gewei.  "'KG'.
                                   
+    perform bdc_field       using 'MARA-NTGEW'
+                                  gs_mara-ntgew.  "'4,50'.
+    perform bdc_dynpro      using 'SAPLMGMM' '4004'.
+    perform bdc_field       using 'BDC_OKCODE'
+                                  '/00'.
+    perform bdc_field       using 'BDC_CURSOR'
+                                  'MAKT-MAKTX'.
+    perform bdc_field       using 'MAKT-MAKTX'
+                                  gs_mara-maktx.  "'Staubsauger Roboter'.                                
+                                  
                                   
                                   
 endloop.
