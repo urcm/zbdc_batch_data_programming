@@ -101,7 +101,20 @@ loop at gt_mara into gs_mara.
     perform bdc_field       using 'BDC_OKCODE'
                                   '/00'.
     perform bdc_field       using 'MAKT-MAKTX'
-                                  gs_mara-maktx.  "'Staubsauger Roboter'.                                  
+                                  gs_mara-maktx.  "'Staubsauger Roboter'.          
+                                  
+     perform bdc_field       using 'MARA-MEINS'
+                                  gs_mara-meins.  "'EA'.
+    perform bdc_field       using 'MARA-MATKL'
+                                  gs_mara-matkl.  "'01'.
+    perform bdc_field       using 'BDC_CURSOR'
+                                  'MARA-GEWEI'.
+    perform bdc_field       using 'MARA-BRGEW'
+                                  gs_mara-brgew.  "'4,65'.
+    perform bdc_field       using 'MARA-GEWEI'
+                                  gs_mara-gewei.  "'KG'.
+                                  
+                                  
                                   
 endloop.
                                   
