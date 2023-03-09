@@ -137,7 +137,15 @@ loop at gt_mara into gs_mara.
                                   gs_mara-matkl.  "'01'.
     perform bdc_dynpro      using 'SAPLSPO1' '0300'.
     perform bdc_field       using 'BDC_OKCODE'
-                                  '=YES'.                                  
+                                  '=YES'.            
+                                  
+    call function 'BDC_INSERT'
+      exporting
+        tcode     = 'MM01'
+      tables
+        dynprotab = bdcdata.
+
+    clear: gs_mara.                                  
                                   
 endloop.
                                   
