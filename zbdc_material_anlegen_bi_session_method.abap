@@ -124,7 +124,20 @@ loop at gt_mara into gs_mara.
     perform bdc_field       using 'MAKT-MAKTX'
                                   gs_mara-maktx.  "'Staubsauger Roboter'.                                
                                   
-                                  
+    perform bdc_dynpro      using 'SAPLMGMM' '4000'.
+    perform bdc_field       using 'BDC_OKCODE'
+                                  '/00'.
+    perform bdc_field       using 'BDC_CURSOR'
+                                  'MAKT-MAKTX'.
+    perform bdc_field       using 'MAKT-MAKTX'
+                                  gs_mara-maktx.  "'Staubsauger Roboter'..
+    perform bdc_field       using 'MARA-MEINS'
+                                  gs_mara-meins.  "'EA'.
+    perform bdc_field       using 'MARA-MATKL'
+                                  gs_mara-matkl.  "'01'.
+    perform bdc_dynpro      using 'SAPLSPO1' '0300'.
+    perform bdc_field       using 'BDC_OKCODE'
+                                  '=YES'.                                  
                                   
 endloop.
                                   
