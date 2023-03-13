@@ -149,7 +149,6 @@ loop at gt_mara into gs_mara.
                                   
 endloop.
 
-
   call function 'BDC_CLOSE_GROUP'
     exceptions
       not_open    = 1
@@ -161,4 +160,11 @@ endloop.
     message 'BDC Mappe wurde nicht angelegt' type 'I'.
   endif.
                                   
+form bdc_dynpro using program dynpro.
+  clear bdcdata.
+  bdcdata-program  = program.
+  bdcdata-dynpro   = dynpro.
+  bdcdata-dynbegin = 'X'.
+  append bdcdata.
+endform.
                                   
