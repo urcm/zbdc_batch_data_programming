@@ -148,5 +148,17 @@ loop at gt_mara into gs_mara.
     clear: gs_mara.                                  
                                   
 endloop.
+
+
+  call function 'BDC_CLOSE_GROUP'
+    exceptions
+      not_open    = 1
+      queue_error = 2
+      others      = 3.
+  if sy-subrc eq 0.
+    message 'BDC Mappe wurde angelegt' type 'I'.
+  else.
+    message 'BDC Mappe wurde nicht angelegt' type 'I'.
+  endif.
                                   
                                   
