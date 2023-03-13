@@ -168,3 +168,12 @@ form bdc_dynpro using program dynpro.
   append bdcdata.
 endform.
                                   
+form bdc_field using fnam fval.
+  if fval <> space.
+    clear bdcdata.
+    bdcdata-fnam = fnam.
+    bdcdata-fval = fval.
+    shift bdcdata-fval left deleting leading space.
+    append bdcdata.
+  endif.
+endform.
